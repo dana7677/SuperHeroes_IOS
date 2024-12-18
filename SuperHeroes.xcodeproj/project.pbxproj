@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		B2AF746D2D1321DC0033943B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF746C2D1321DC0033943B /* AppDelegate.swift */; };
 		B2AF746F2D1321DC0033943B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF746E2D1321DC0033943B /* SceneDelegate.swift */; };
-		B2AF74712D1321DC0033943B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF74702D1321DC0033943B /* ViewController.swift */; };
+		B2AF74712D1321DC0033943B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF74702D1321DC0033943B /* MainViewController.swift */; };
 		B2AF74742D1321DC0033943B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B2AF74732D1321DC0033943B /* Base */; };
 		B2AF74762D1321DD0033943B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2AF74752D1321DD0033943B /* Assets.xcassets */; };
 		B2AF74792D1321DD0033943B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B2AF74782D1321DD0033943B /* Base */; };
+		B2AF74852D132AAD0033943B /* SuperHeroeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF74842D132AAD0033943B /* SuperHeroeResponse.swift */; };
+		B2AF74872D132CDC0033943B /* SuperHeroeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF74862D132CDC0033943B /* SuperHeroeProvider.swift */; };
+		B2AF74892D1332FC0033943B /* SuperHeroViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF74882D1332FC0033943B /* SuperHeroViewCell.swift */; };
+		B2AF748D2D133DD00033943B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF748C2D133DD00033943B /* UIImageExtensions.swift */; };
+		B2AF748F2D13589D0033943B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF748E2D13589D0033943B /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B2AF74692D1321DC0033943B /* SuperHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2AF746C2D1321DC0033943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2AF746E2D1321DC0033943B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B2AF74702D1321DC0033943B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B2AF74702D1321DC0033943B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B2AF74732D1321DC0033943B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2AF74752D1321DD0033943B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2AF74782D1321DD0033943B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2AF747A2D1321DD0033943B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2AF74842D132AAD0033943B /* SuperHeroeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroeResponse.swift; sourceTree = "<group>"; };
+		B2AF74862D132CDC0033943B /* SuperHeroeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroeProvider.swift; sourceTree = "<group>"; };
+		B2AF74882D1332FC0033943B /* SuperHeroViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroViewCell.swift; sourceTree = "<group>"; };
+		B2AF748C2D133DD00033943B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		B2AF748E2D13589D0033943B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,60 @@
 		B2AF746B2D1321DC0033943B /* SuperHeroes */ = {
 			isa = PBXGroup;
 			children = (
+				B2AF748B2D133D570033943B /* Utils */,
+				B2AF748A2D13331E0033943B /* ViewCells */,
+				B2AF74832D13264D0033943B /* Data */,
+				B2AF74822D1325060033943B /* Views */,
+				B2AF74802D1324E50033943B /* ViewControllers */,
 				B2AF746C2D1321DC0033943B /* AppDelegate.swift */,
 				B2AF746E2D1321DC0033943B /* SceneDelegate.swift */,
-				B2AF74702D1321DC0033943B /* ViewController.swift */,
 				B2AF74722D1321DC0033943B /* Main.storyboard */,
 				B2AF74752D1321DD0033943B /* Assets.xcassets */,
 				B2AF74772D1321DD0033943B /* LaunchScreen.storyboard */,
 				B2AF747A2D1321DD0033943B /* Info.plist */,
 			);
 			path = SuperHeroes;
+			sourceTree = "<group>";
+		};
+		B2AF74802D1324E50033943B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2AF748E2D13589D0033943B /* DetailViewController.swift */,
+				B2AF74702D1321DC0033943B /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B2AF74822D1325060033943B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B2AF74832D13264D0033943B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B2AF74842D132AAD0033943B /* SuperHeroeResponse.swift */,
+				B2AF74862D132CDC0033943B /* SuperHeroeProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B2AF748A2D13331E0033943B /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B2AF74882D1332FC0033943B /* SuperHeroViewCell.swift */,
+			);
+			path = ViewCells;
+			sourceTree = "<group>";
+		};
+		B2AF748B2D133D570033943B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B2AF748C2D133DD00033943B /* UIImageExtensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2AF74712D1321DC0033943B /* ViewController.swift in Sources */,
+				B2AF74852D132AAD0033943B /* SuperHeroeResponse.swift in Sources */,
+				B2AF74712D1321DC0033943B /* MainViewController.swift in Sources */,
+				B2AF748D2D133DD00033943B /* UIImageExtensions.swift in Sources */,
+				B2AF74872D132CDC0033943B /* SuperHeroeProvider.swift in Sources */,
+				B2AF74892D1332FC0033943B /* SuperHeroViewCell.swift in Sources */,
 				B2AF746D2D1321DC0033943B /* AppDelegate.swift in Sources */,
 				B2AF746F2D1321DC0033943B /* SceneDelegate.swift in Sources */,
+				B2AF748F2D13589D0033943B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
