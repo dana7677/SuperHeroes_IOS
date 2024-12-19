@@ -18,6 +18,8 @@
 		B2AF74892D1332FC0033943B /* SuperHeroViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF74882D1332FC0033943B /* SuperHeroViewCell.swift */; };
 		B2AF748D2D133DD00033943B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF748C2D133DD00033943B /* UIImageExtensions.swift */; };
 		B2AF748F2D13589D0033943B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF748E2D13589D0033943B /* DetailViewController.swift */; };
+		B2D7ED512D14829E00B5B265 /* AnimationsForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D7ED502D14829E00B5B265 /* AnimationsForView.swift */; };
+		B2D7ED552D14875200B5B265 /* UIProgressBarUpgraded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D7ED542D14875200B5B265 /* UIProgressBarUpgraded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		B2AF74882D1332FC0033943B /* SuperHeroViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroViewCell.swift; sourceTree = "<group>"; };
 		B2AF748C2D133DD00033943B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		B2AF748E2D13589D0033943B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B2D7ED502D14829E00B5B265 /* AnimationsForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsForView.swift; sourceTree = "<group>"; };
+		B2D7ED542D14875200B5B265 /* UIProgressBarUpgraded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIProgressBarUpgraded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				B2AF748C2D133DD00033943B /* UIImageExtensions.swift */,
+				B2D7ED502D14829E00B5B265 /* AnimationsForView.swift */,
+				B2D7ED542D14875200B5B265 /* UIProgressBarUpgraded.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -195,11 +201,13 @@
 			files = (
 				B2AF74852D132AAD0033943B /* SuperHeroeResponse.swift in Sources */,
 				B2AF74712D1321DC0033943B /* MainViewController.swift in Sources */,
+				B2D7ED552D14875200B5B265 /* UIProgressBarUpgraded.swift in Sources */,
 				B2AF748D2D133DD00033943B /* UIImageExtensions.swift in Sources */,
 				B2AF74872D132CDC0033943B /* SuperHeroeProvider.swift in Sources */,
 				B2AF74892D1332FC0033943B /* SuperHeroViewCell.swift in Sources */,
 				B2AF746D2D1321DC0033943B /* AppDelegate.swift in Sources */,
 				B2AF746F2D1321DC0033943B /* SceneDelegate.swift in Sources */,
+				B2D7ED512D14829E00B5B265 /* AnimationsForView.swift in Sources */,
 				B2AF748F2D13589D0033943B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
