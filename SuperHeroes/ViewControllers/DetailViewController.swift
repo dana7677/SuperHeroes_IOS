@@ -89,8 +89,10 @@ class DetailViewController: UIViewController {
         var wageFloat:Float = 0.0
         
         let wageNumber = NumberFormatter().number(from: wage)
+
         wageFloat = wageNumber!.floatValue
         wageFloat=wageFloat/100.0
+       
         
         return wageFloat
         

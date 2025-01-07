@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController,UITableViewDataSource,UISearchBarDelegate {
+class MainViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UISearchBarDelegate,UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var list:[DataHero] = []
 
@@ -17,7 +17,8 @@ class MainViewController: UIViewController,UITableViewDataSource,UISearchBarDele
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView.dataSource = self
+            collectionView.dataSource = self
+            collectionView.delegate = self
                 
                 let searchController = UISearchController(searchResultsController: nil)
                 searchController.searchBar.delegate = self
@@ -27,24 +28,51 @@ class MainViewController: UIViewController,UITableViewDataSource,UISearchBarDele
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",for: indexPath) as! SuperHeroViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell",for: indexPath) as! SuperHeroViewCell
         let nameHero = list[indexPath.item]
         cell.render(nameHero)
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           
+        
+        
+        
+                var columns = 2
+                // Assign number of columns depending on device
+                // Esto sirve para Setear las diferentes caracteristicas del dispositivo en función del tipo.
+                switch UIDevice.current.userInterfaceIdiom {
+                case .phone:
+                    columns = 2
+                case .pad:
+                    columns = 5
+                default:
+                    columns = 2
+                }
+        
+        
+        
+           let spacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
+           let screenWidth = collectionView.frame.size.width
+           let leftSpace = screenWidth - spacing * CGFloat(columns + 1)
+           let width = leftSpace / CGFloat(columns) //some width
+           let height = width * 1.33 //ratio
+           return CGSize(width: width, height: height)
+       }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let detailViewController = segue.destination as! DetailViewController
-            let indexPath = tableView.indexPathForSelectedRow!
-            let superhero = list[indexPath.row]
-            detailViewController.superHeroe = superhero
-            tableView.deselectRow(at: indexPath, animated: true)
+        let detailViewController = segue.destination as! DetailViewController
+        let indexPath = collectionView.indexPathsForSelectedItems![0]
+        let superhero = list[indexPath.row]
+        detailViewController.superHeroe = superhero
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
     
@@ -62,7 +90,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UISearchBarDele
                 do {
                     list = try await SuperHeroeProvider.findSuperheroesBy(name: name)
                     DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                        self.collectionView.reloadData()
                     }
                 } catch {
                     print(error)

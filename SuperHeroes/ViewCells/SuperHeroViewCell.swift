@@ -7,19 +7,19 @@
 
 import UIKit
 
-class SuperHeroViewCell: UITableViewCell {
+class SuperHeroViewCell: UICollectionViewCell {
 
     @IBOutlet weak var nameHero: UILabel!
     @IBOutlet weak var ImgHero: UIImageView!
+    @IBOutlet weak var CardView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        CardView.layer.shadowColor = UIColor.black.cgColor
+        CardView.layer.shadowOpacity = 0.5
+        CardView.layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
+        CardView.layer.shadowRadius = 2.0
     }
     
     func render(_ dataHero:DataHero){
