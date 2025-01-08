@@ -52,6 +52,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var ConnectionsGroup: UILabel!
     @IBOutlet weak var ConnectionsRelatives: UILabel!
     
+    //MARK: Segmented Control
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBAction func SenderChange(_ sender: UISegmentedControl)
@@ -70,6 +71,18 @@ class DetailViewController: UIViewController {
                     break;
                 }
     }
+    func changeStaxViewToShow(_ stackView:UIStackView)
+    {
+        
+        BioStack.isHidden = true
+        WorkStack.isHidden = true
+        ConnectionsStack.isHidden = true
+        AppearanceStack.isHidden = true
+        stackView.isHidden = false
+        
+    }
+    
+    //MARK: InitialData
     
     var superHeroe:DataHero!
     override func viewDidLoad() {
@@ -86,7 +99,7 @@ class DetailViewController: UIViewController {
       
 
         
-        //IntImgIcon.tintColor = UIColor.colorLow
+        //Animation Start for get the value from the bar
         
         starAnimations(InteligenceProgressBar,getNumberFloat(superHeroe.powerstats.intelligence))
         IntImgIcon.shine()
@@ -129,16 +142,10 @@ class DetailViewController: UIViewController {
       
     }
     
-    func changeStaxViewToShow(_ stackView:UIStackView)
-    {
-        
-        BioStack.isHidden = true
-        WorkStack.isHidden = true
-        ConnectionsStack.isHidden = true
-        AppearanceStack.isHidden = true
-        stackView.isHidden = false
-        
-    }
+    
+    
+    
+    //MARK: Logic For Set Data
     
     func getNumberFloat(_ wage:String)->Float{
         
