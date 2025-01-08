@@ -11,7 +11,6 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var ImgDetailHero: UIImageView!
     @IBOutlet weak var NameDetailHero: UILabel!
-    @IBOutlet weak var buttonPrueba: UIButton!
     
     @IBOutlet weak var InteligenceProgressBar: UIProgressView!
     @IBOutlet weak var StrenghtProgressBar: UIProgressView!
@@ -27,17 +26,63 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var SpeedImgIcon: UIImageView!
     
     
+    //InfoSuperHeroe
+    @IBOutlet weak var BioStack: UIStackView!
+    @IBOutlet weak var BioFullName: UILabel!
+    @IBOutlet weak var BioAlterEgo: UILabel!
+    @IBOutlet weak var BioAlias: UILabel!
+    @IBOutlet weak var BioPlaceBirth: UILabel!
+    @IBOutlet weak var BioFirstAppearance: UILabel!
+    @IBOutlet weak var BioPublisher: UILabel!
+    @IBOutlet weak var BioAlignment: UILabel!
+    
+    @IBOutlet weak var AppearanceStack: UIStackView!
+    @IBOutlet weak var AppearGender: UILabel!
+    @IBOutlet weak var AppearRace: UILabel!
+    @IBOutlet weak var AppearHeight: UILabel!
+    @IBOutlet weak var AppearWeight: UILabel!
+    @IBOutlet weak var AppearEyesColor: UILabel!
+    @IBOutlet weak var AppearHairColor: UILabel!
+    
+    @IBOutlet weak var WorkStack: UIStackView!
+    @IBOutlet weak var WorkOccupation: UILabel!
+    @IBOutlet weak var WorkBase: UILabel!
+    
+    @IBOutlet weak var ConnectionsStack: UIStackView!
+    @IBOutlet weak var ConnectionsGroup: UILabel!
+    @IBOutlet weak var ConnectionsRelatives: UILabel!
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    @IBAction func SenderChange(_ sender: UISegmentedControl)
+    {
+        switch segmentedControl.selectedSegmentIndex
+                {
+                case 0:
+                changeStaxViewToShow(BioStack)
+                case 1:
+                changeStaxViewToShow(AppearanceStack)
+                case 2:
+                changeStaxViewToShow(WorkStack)
+                case 3:
+                changeStaxViewToShow(ConnectionsStack)
+                default:
+                    break;
+                }
+    }
+    
     var superHeroe:DataHero!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        buttonPrueba.bounce()
+        
         
         navigationItem.title = superHeroe.name
-        NameDetailHero.text = superHeroe.name
+        NameDetailHero.text = superHeroe.biography.alias[0]
         ImgDetailHero.loadFrom(url: superHeroe.image.url)
         
+        setInfoHeroes()
       
 
         
@@ -81,6 +126,17 @@ class DetailViewController: UIViewController {
         SpeedImgIcon.backgroundColor = setColor(getNumberFloat(superHeroe.powerstats.speed))
         
         
+      
+    }
+    
+    func changeStaxViewToShow(_ stackView:UIStackView)
+    {
+        
+        BioStack.isHidden = true
+        WorkStack.isHidden = true
+        ConnectionsStack.isHidden = true
+        AppearanceStack.isHidden = true
+        stackView.isHidden = false
         
     }
     
@@ -130,9 +186,64 @@ class DetailViewController: UIViewController {
         
     }
     
-
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        buttonPrueba.bounce()
+    func setInfoHeroes()
+    {
+        //Bio
+        setMultipleLine("Alias: ",superHeroe.biography.alias, BioAlias)
+        setLine("Alignment: ",superHeroe.biography.alignment, BioAlignment)
+        setLine("Publisher: ",superHeroe.biography.publisher, BioPublisher)
+        setLine("AlterEgo: ",superHeroe.biography.alterEgo, BioAlterEgo)
+        setLine("FullName: ",superHeroe.biography.fullName, BioFullName)
+        setLine("Place Of Birth: ",superHeroe.biography.placeBirth, BioPlaceBirth)
+        setLine("First Appearance: ",superHeroe.biography.firstAppearance, BioFirstAppearance)
+        //Appear
+        setLine("Race: ",superHeroe.appearance.race, AppearRace)
+        setLine("Gender: ",superHeroe.appearance.gender, AppearGender)
+        setMultipleLine("Height: ",superHeroe.appearance.height, AppearHeight)
+        setMultipleLine("Weight: ",superHeroe.appearance.weight, AppearWeight)
+        setLine("Eyes Color: ",superHeroe.appearance.eyesColor, AppearEyesColor)
+        setLine("Hair Color: ",superHeroe.appearance.hairColor, AppearHairColor)
+        
+        
+        //Work
+        setLine("Base: ",superHeroe.work.base, WorkBase)
+        setLine("Occupation: ",superHeroe.work.occupation, WorkOccupation)
+        //Connections
+        setLine("Group: ",superHeroe.connections.group, ConnectionsGroup)
+        setLine("Relatives: ",superHeroe.connections.relatives, ConnectionsRelatives)
+         
+        
+    }
+    func setMultipleLine(_ intro: String,_ text: Array<String>, _ labelPass:UILabel)
+    {
+        if (text.isEmpty)
+        {
+            labelPass.text="No result"
+        }
+        else
+        {
+            var StringNew=intro
+            
+            for x in text
+            {
+                StringNew=StringNew + " " + x
+            }
+            
+            labelPass.text=StringNew
+        }
+    }
+    
+    func setLine(_ intro: String, _ text: String, _ labelPass:UILabel)
+    {
+        if (text.isEmpty || text == "-")
+        {
+            labelPass.text="No result"
+        }
+        else
+        {
+            labelPass.text = intro + text
+        }
+        
     }
     /*
     // MARK: - Navigation

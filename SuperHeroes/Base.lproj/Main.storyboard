@@ -100,21 +100,12 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guw-T3-jGN">
-                                        <rect key="frame" x="51" y="267" width="269" height="21"/>
+                                        <rect key="frame" x="8" y="250" width="365" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOZ-5r-3Zz">
-                                        <rect key="frame" x="143" y="416" width="75" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="Cv9-K2-IJl" eventType="touchUpInside" id="7oG-6w-BBh"/>
-                                        </connections>
-                                    </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VZf-sU-SFT">
                                         <rect key="frame" x="223" y="109" width="150" height="8"/>
                                         <constraints>
@@ -176,15 +167,172 @@
                                         <rect key="frame" x="183" y="210" width="32" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-Xz-vAO">
-                                        <rect key="frame" x="8" y="296" width="365" height="32"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bordered" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-Xz-vAO">
+                                        <rect key="frame" x="0.0" y="296" width="393" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                         <segments>
-                                            <segment title=""/>
-                                            <segment title="Second"/>
-                                            <segment title=""/>
+                                            <segment title="" image="BiographyIcon"/>
+                                            <segment title="" image="appearanceIcon"/>
+                                            <segment title="" image="workIcon"/>
+                                            <segment title="" image="relationsIcon"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="SenderChange:" destination="Cv9-K2-IJl" eventType="valueChanged" id="U6g-vL-Ulv"/>
+                                        </connections>
                                     </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3D-PV-L1j">
+                                        <rect key="frame" x="8" y="348" width="377" height="359"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" restorationIdentifier="StackBio" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1E9-kh-Ph1">
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="359"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jd-RW-Ghv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="51.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alter Ego:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj3-cY-8tl">
+                                                        <rect key="frame" x="0.0" y="51.333333333333314" width="377" height="51.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alias:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-A5-3FY">
+                                                        <rect key="frame" x="0.0" y="102.66666666666661" width="377" height="51.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Birth:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngq-bg-Jc2">
+                                                        <rect key="frame" x="0.0" y="154" width="377" height="51"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Appearance:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1b-6I-9nj">
+                                                        <rect key="frame" x="0.0" y="205" width="377" height="51.333333333333314"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PE7-wa-oH5">
+                                                        <rect key="frame" x="0.0" y="256.33333333333337" width="377" height="51.333333333333314"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alignment:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIi-HN-i5i">
+                                                        <rect key="frame" x="0.0" y="307.66666666666663" width="377" height="51.333333333333314"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IsJ-sg-zth">
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="359"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzh-YG-ciK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="60"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alter Ego:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4i-w6-gJg">
+                                                        <rect key="frame" x="0.0" y="60" width="377" height="59.666666666666657"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alias:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1v-Mc-eEz">
+                                                        <rect key="frame" x="0.0" y="119.66666666666663" width="377" height="60"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Birth:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7X-nH-Sym">
+                                                        <rect key="frame" x="0.0" y="179.66666666666663" width="377" height="59.666666666666657"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Appearance:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUe-0R-bvu">
+                                                        <rect key="frame" x="0.0" y="239.33333333333337" width="377" height="60"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yf-Ui-Ugq">
+                                                        <rect key="frame" x="0.0" y="299.33333333333337" width="377" height="59.666666666666686"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4Fh-VS-SSq">
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="359"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZc-4M-SNN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="179.66666666666666"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alter Ego:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5d-tM-Ky3">
+                                                        <rect key="frame" x="0.0" y="179.66666666666663" width="377" height="179.33333333333337"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-JN-re5">
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="359"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkT-30-9DW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="179.66666666666666"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alter Ego:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBN-8e-0Yd">
+                                                        <rect key="frame" x="0.0" y="179.66666666666663" width="377" height="179.33333333333337"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="IsJ-sg-zth" secondAttribute="bottom" id="1BY-lX-ztk"/>
+                                            <constraint firstItem="IsJ-sg-zth" firstAttribute="top" secondItem="V3D-PV-L1j" secondAttribute="top" id="2Qs-sW-c4w"/>
+                                            <constraint firstAttribute="trailing" secondItem="IsJ-sg-zth" secondAttribute="trailing" id="H1l-vJ-y1u"/>
+                                            <constraint firstAttribute="trailing" secondItem="1E9-kh-Ph1" secondAttribute="trailing" id="OEF-kF-jgX"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Fh-VS-SSq" secondAttribute="trailing" id="OlE-F0-t5c"/>
+                                            <constraint firstAttribute="trailing" secondItem="mFY-JN-re5" secondAttribute="trailing" id="TG1-Ax-SPO"/>
+                                            <constraint firstItem="4Fh-VS-SSq" firstAttribute="leading" secondItem="V3D-PV-L1j" secondAttribute="leading" id="W16-XM-lYn"/>
+                                            <constraint firstItem="IsJ-sg-zth" firstAttribute="leading" secondItem="V3D-PV-L1j" secondAttribute="leading" id="coD-3p-5vh"/>
+                                            <constraint firstAttribute="trailing" secondItem="IsJ-sg-zth" secondAttribute="trailing" id="d7b-vO-Nqn"/>
+                                            <constraint firstAttribute="bottom" secondItem="mFY-JN-re5" secondAttribute="bottom" id="ebe-B6-ndC"/>
+                                            <constraint firstItem="1E9-kh-Ph1" firstAttribute="top" secondItem="V3D-PV-L1j" secondAttribute="top" id="i55-H3-bW6"/>
+                                            <constraint firstItem="1E9-kh-Ph1" firstAttribute="leading" secondItem="V3D-PV-L1j" secondAttribute="leading" id="ie6-qW-blP"/>
+                                            <constraint firstItem="4Fh-VS-SSq" firstAttribute="top" secondItem="V3D-PV-L1j" secondAttribute="top" id="jmY-0t-kGj"/>
+                                            <constraint firstAttribute="bottom" secondItem="4Fh-VS-SSq" secondAttribute="bottom" id="mSp-3h-7DD"/>
+                                            <constraint firstItem="mFY-JN-re5" firstAttribute="top" secondItem="V3D-PV-L1j" secondAttribute="top" id="nL4-Wv-12V"/>
+                                            <constraint firstItem="mFY-JN-re5" firstAttribute="leading" secondItem="V3D-PV-L1j" secondAttribute="leading" id="rWn-ML-PeU"/>
+                                            <constraint firstAttribute="bottom" secondItem="1E9-kh-Ph1" secondAttribute="bottom" id="ucT-Yh-va2"/>
+                                            <constraint firstAttribute="bottom" secondItem="IsJ-sg-zth" secondAttribute="bottom" id="w3l-ZD-8mz"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -202,12 +350,16 @@
                                     <constraint firstItem="aiI-ob-2Vi" firstAttribute="top" secondItem="GFL-09-uXQ" secondAttribute="top" constant="73" id="Y82-4Z-CwK"/>
                                     <constraint firstItem="tuG-Jf-WNc" firstAttribute="top" secondItem="GFL-09-uXQ" secondAttribute="top" constant="150" id="Zxo-ND-8MZ"/>
                                     <constraint firstItem="tuG-Jf-WNc" firstAttribute="top" secondItem="GFL-09-uXQ" secondAttribute="top" constant="150" id="aIW-dU-Ryn"/>
+                                    <constraint firstAttribute="trailing" secondItem="V3D-PV-L1j" secondAttribute="trailing" constant="8" id="bXU-SQ-3sk"/>
+                                    <constraint firstItem="V3D-PV-L1j" firstAttribute="leading" secondItem="GFL-09-uXQ" secondAttribute="leading" constant="8" id="c8F-Lp-JoX"/>
+                                    <constraint firstItem="V3D-PV-L1j" firstAttribute="top" secondItem="GFL-09-uXQ" secondAttribute="top" constant="348" id="cbW-2U-6md"/>
                                     <constraint firstItem="VZf-sU-SFT" firstAttribute="top" secondItem="GFL-09-uXQ" secondAttribute="top" constant="109" id="cuy-0s-xqm"/>
                                     <constraint firstItem="VZf-sU-SFT" firstAttribute="leading" secondItem="GFL-09-uXQ" secondAttribute="leading" constant="223" id="dWG-Nl-fwq"/>
                                     <constraint firstItem="hxN-fX-o8C" firstAttribute="top" secondItem="GFL-09-uXQ" secondAttribute="top" constant="185" id="hwK-9D-Z4w"/>
                                     <constraint firstAttribute="trailing" secondItem="hxN-fX-o8C" secondAttribute="trailing" constant="20" id="hyg-uG-jkD"/>
                                     <constraint firstItem="tuG-Jf-WNc" firstAttribute="leading" secondItem="GFL-09-uXQ" secondAttribute="leading" constant="223" id="iuL-Eu-45m"/>
                                     <constraint firstAttribute="trailing" secondItem="z8w-60-an7" secondAttribute="trailing" constant="20" id="kZd-p7-ETu"/>
+                                    <constraint firstAttribute="bottom" secondItem="V3D-PV-L1j" secondAttribute="bottom" constant="8" id="lOO-Kz-SkM"/>
                                     <constraint firstItem="z8w-60-an7" firstAttribute="top" secondItem="GFL-09-uXQ" secondAttribute="top" constant="222" id="pYW-EY-z2n"/>
                                     <constraint firstItem="hxN-fX-o8C" firstAttribute="leading" secondItem="GFL-09-uXQ" secondAttribute="leading" constant="223" id="s7I-89-kDx"/>
                                     <constraint firstItem="tuG-Jf-WNc" firstAttribute="leading" secondItem="GFL-09-uXQ" secondAttribute="leading" constant="223" id="tgu-Cg-U9C"/>
@@ -231,8 +383,26 @@
                     </view>
                     <navigationItem key="navigationItem" id="eCu-B8-hoR"/>
                     <connections>
+                        <outlet property="AppearEyesColor" destination="KUe-0R-bvu" id="PSI-nJ-uCV"/>
+                        <outlet property="AppearGender" destination="hzh-YG-ciK" id="H83-qk-UI6"/>
+                        <outlet property="AppearHairColor" destination="2yf-Ui-Ugq" id="mnk-AV-2xG"/>
+                        <outlet property="AppearHeight" destination="o1v-Mc-eEz" id="YbL-Ev-w0A"/>
+                        <outlet property="AppearRace" destination="M4i-w6-gJg" id="Uhk-71-zjB"/>
+                        <outlet property="AppearWeight" destination="U7X-nH-Sym" id="Sw0-HP-Z6q"/>
+                        <outlet property="AppearanceStack" destination="IsJ-sg-zth" id="rpi-hq-JQ5"/>
+                        <outlet property="BioAlias" destination="LWD-A5-3FY" id="hFt-wf-8mX"/>
+                        <outlet property="BioAlignment" destination="JIi-HN-i5i" id="skX-HV-1DT"/>
+                        <outlet property="BioAlterEgo" destination="cj3-cY-8tl" id="Qao-dN-wZc"/>
+                        <outlet property="BioFirstAppearance" destination="h1b-6I-9nj" id="3WZ-Qr-MoU"/>
+                        <outlet property="BioFullName" destination="4Jd-RW-Ghv" id="jtv-GC-CZL"/>
+                        <outlet property="BioPlaceBirth" destination="Ngq-bg-Jc2" id="jgz-gR-BOs"/>
+                        <outlet property="BioPublisher" destination="PE7-wa-oH5" id="Blc-ho-wq2"/>
+                        <outlet property="BioStack" destination="1E9-kh-Ph1" id="LLT-V0-zoK"/>
                         <outlet property="CombatImgIcon" destination="8Nk-8C-Oun" id="bKH-sh-ULx"/>
                         <outlet property="CombatProgressBar" destination="z8w-60-an7" id="igY-Dg-hOJ"/>
+                        <outlet property="ConnectionsGroup" destination="YkT-30-9DW" id="f2S-ox-eGo"/>
+                        <outlet property="ConnectionsRelatives" destination="KBN-8e-0Yd" id="cdT-16-BNB"/>
+                        <outlet property="ConnectionsStack" destination="mFY-JN-re5" id="NZ1-MY-plo"/>
                         <outlet property="DurabilityImgIcon" destination="Jlr-jW-DaH" id="Pac-vF-UC5"/>
                         <outlet property="DurabilityProgressBar" destination="tuG-Jf-WNc" id="Nqk-0J-0zm"/>
                         <outlet property="ImgDetailHero" destination="WCj-eT-8em" id="rnW-Cr-672"/>
@@ -245,7 +415,10 @@
                         <outlet property="SpeedProgressBar" destination="VZf-sU-SFT" id="xEB-a3-x8A"/>
                         <outlet property="StrenghtImgIcon" destination="VsK-Gk-byN" id="BkT-fI-vDh"/>
                         <outlet property="StrenghtProgressBar" destination="aiI-ob-2Vi" id="aQp-O8-9QE"/>
-                        <outlet property="buttonPrueba" destination="rOZ-5r-3Zz" id="HEY-3p-tGq"/>
+                        <outlet property="WorkBase" destination="y5d-tM-Ky3" id="FPn-1F-HPR"/>
+                        <outlet property="WorkOccupation" destination="qZc-4M-SNN" id="Isn-fR-anf"/>
+                        <outlet property="WorkStack" destination="4Fh-VS-SSq" id="uo4-hk-2bc"/>
+                        <outlet property="segmentedControl" destination="MHp-Xz-vAO" id="eQu-nd-gcP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzK-3k-rrp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -272,8 +445,24 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BiographyIcon" width="800" height="800"/>
+        <image name="appearanceIcon" width="800" height="800"/>
+        <image name="relationsIcon" width="800" height="800"/>
+        <image name="workIcon" width="800" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
