@@ -196,28 +196,29 @@ class DetailViewController: UIViewController {
     func setInfoHeroes()
     {
         //Bio
-        setMultipleLine("Alias: ",superHeroe.biography.alias, BioAlias)
-        setLine("Alignment: ",superHeroe.biography.alignment, BioAlignment)
-        setLine("Publisher: ",superHeroe.biography.publisher, BioPublisher)
-        setLine("AlterEgo: ",superHeroe.biography.alterEgo, BioAlterEgo)
-        setLine("FullName: ",superHeroe.biography.fullName, BioFullName)
-        setLine("Place Of Birth: ",superHeroe.biography.placeBirth, BioPlaceBirth)
-        setLine("First Appearance: ",superHeroe.biography.firstAppearance, BioFirstAppearance)
+        
+        setMultipleLine(String(localized: "alias_prop"),superHeroe.biography.alias, BioAlias)
+        setLine(String(localized: "alignment_prop"),superHeroe.biography.alignment, BioAlignment)
+        setLine(String(localized: "publisher_prop"),superHeroe.biography.publisher, BioPublisher)
+        setLine(String(localized: "AlterEgo_prop"),superHeroe.biography.alterEgo, BioAlterEgo)
+        setLine(String(localized: "FullName_prop"),superHeroe.biography.fullName, BioFullName)
+        setLine(String(localized: "placeOfBirth_prop"),superHeroe.biography.placeBirth, BioPlaceBirth)
+        setLine(String(localized: "FirstAppearance_prop"),superHeroe.biography.firstAppearance, BioFirstAppearance)
         //Appear
-        setLine("Race: ",superHeroe.appearance.race, AppearRace)
-        setLine("Gender: ",superHeroe.appearance.gender, AppearGender)
-        setMultipleLine("Height: ",superHeroe.appearance.height, AppearHeight)
-        setMultipleLine("Weight: ",superHeroe.appearance.weight, AppearWeight)
-        setLine("Eyes Color: ",superHeroe.appearance.eyesColor, AppearEyesColor)
-        setLine("Hair Color: ",superHeroe.appearance.hairColor, AppearHairColor)
+        setLine(String(localized: "Race_prop"),superHeroe.appearance.race, AppearRace)
+        setLine(String(localized: "Gender_prop"),superHeroe.appearance.gender, AppearGender)
+        setMultipleLine(String(localized: "Height_prop"),superHeroe.appearance.height, AppearHeight)
+        setMultipleLine(String(localized: "Weight_prop"),superHeroe.appearance.weight, AppearWeight)
+        setLine(String(localized: "EyesColor_prop"),superHeroe.appearance.eyesColor, AppearEyesColor)
+        setLine(String(localized: "HairColor_prop"),superHeroe.appearance.hairColor, AppearHairColor)
         
         
         //Work
-        setLine("Base: ",superHeroe.work.base, WorkBase)
-        setLine("Occupation: ",superHeroe.work.occupation, WorkOccupation)
+        setLine(String(localized: "Base_prop"),superHeroe.work.base, WorkBase)
+        setLine(String(localized: "Occupation_prop"),superHeroe.work.occupation, WorkOccupation)
         //Connections
-        setLine("Group: ",superHeroe.connections.group, ConnectionsGroup)
-        setLine("Relatives: ",superHeroe.connections.relatives, ConnectionsRelatives)
+        setLine(String(localized: "Group_prop"),superHeroe.connections.group, ConnectionsGroup)
+        setLine(String(localized: "Relatives_prop"),superHeroe.connections.relatives, ConnectionsRelatives)
          
         
     }
@@ -225,7 +226,7 @@ class DetailViewController: UIViewController {
     {
         if (text.isEmpty)
         {
-            labelPass.text="No result"
+            labelPass.text = intro + String(localized: "NoResult_prop")
         }
         else
         {
@@ -244,7 +245,7 @@ class DetailViewController: UIViewController {
     {
         if (text.isEmpty || text == "-")
         {
-            labelPass.text="No result"
+            labelPass.text = intro + String(localized: "NoResult_prop")
         }
         else
         {
